@@ -1,0 +1,88 @@
+esphome:
+  name: mintymcu_ir
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: !secret ap_ssid
+    password: !secret ap_password
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+remote_receiver:
+    pin:
+      number: D1
+      inverted: True
+    dump: all
+
+remote_transmitter:
+  pin: D2
+  # Infrared remotes use a 50% carrier signal
+  carrier_duty_percent: 50%
+
+switch:
+  - platform: template
+    name: Power
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x827D
+  - platform: template
+    name: Mute
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x20DF
+  - platform: template
+    name: Volume Up
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x906F
+  - platform: template
+    name: Volume Down
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xA05F
+  - platform: restart
+    name: "MintyMCU_IR Restart"
+
+sensor:
+  - platform: wifi_signal
+    name: "MintyMCU_IR WiFi Signal Sensor"
+    update_interval: 60s
+  - platform: uptime
+    name: "MintyMCU_IR Uptime Sensor"
+
+binary_sensor:
+    - platform: status
+      name: "MintyMCU_IR Status"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "MintyMCU_IR IP Address"
+    ssid:
+      name: "MintyMCU_IR Connected SSID"
+    bssid:
+      name: "MintyMCU_IR Connected BSSID"
+  - platform: version
+    name: "MintyMCU_IR ESPHome Version"
+
+# secret: !include secrets.yaml
