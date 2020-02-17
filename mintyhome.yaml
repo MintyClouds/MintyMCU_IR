@@ -69,6 +69,10 @@ sensor:
     update_interval: 60s
   - platform: uptime
     name: "MintyMCU_IR Uptime Sensor"
+    update_interval: 60s
+    filters:
+      - lambda: return x / (24 * 3600);
+    unit_of_measumerent: "days"
 
 binary_sensor:
     - platform: status
