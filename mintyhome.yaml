@@ -38,16 +38,36 @@ remote_transmitter:
 switch:
   - platform: template
     name: Power
+    id: ir_power
     turn_on_action:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0x827D
+      - binary_sensor.template.publish:
+          id: sensor_trigger_power
+          state: ON
+      - delay: 1s
+      - switch.turn_off: ir_power
+    turn_off_action:
+      - binary_sensor.template.publish:
+          id: sensor_trigger_power
+          state: OFF
   - platform: template
     name: Mute
+    id: ir_mute
     turn_on_action:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0x20DF
+      - binary_sensor.template.publish:
+          id: sensor_trigger_mute
+          state: ON
+      - delay: 1s
+      - switch.turn_off: ir_mute
+    turn_off_action:
+      - binary_sensor.template.publish:
+          id: sensor_trigger_mute
+          state: OFF
   - platform: template
     name: Volume Up
     turn_on_action:
@@ -72,11 +92,17 @@ sensor:
     update_interval: 60s
     filters:
       - lambda: return x / (24 * 3600);
-    unit_of_measumerent: "days"
+    unit_of_measurement: "days"
 
 binary_sensor:
     - platform: status
       name: "MintyMCU_IR Status"
+    - platform: template
+      name: "MintyMCU_IR Volume Mute Trigger Sensor"
+      id: sensor_trigger_mute
+    - platform: template
+      name: "MintyMCU_IR Power Trigger Sensor"
+      id: sensor_trigger_power
 
 text_sensor:
   - platform: wifi_info
