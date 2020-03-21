@@ -83,62 +83,62 @@ switch:
           address: 0x807F
           command: 0xA05F
   # HDMI Switch
-#  - platform: template
-#    name: "HDMI Power On"
-#    id: hdmi_power_on
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0x3AC5
-#  - platform: template
-#    name: "HDMI Power Off"
-#    id: hdmi_power_off
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0xF807
-#  - platform: template
-#    name: "HDMI Channel 1"
-#    id: hdmi_channel_1
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0xD827
-#  - platform: template
-#    name: "HDMI Channel 2"
-#    id: hdmi_channel_2
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0x58A7
-#  - platform: template
-#    name: "HDMI Channel 3"
-#    id: hdmi_channel_3
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0x40BF
-#  - platform: template
-#    name: "HDMI Channel 4"
-#    id: hdmi_channel_4
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0xB04F
-#  - platform: template
-#    name: "HDMI Audio On/Off"
-#    id: hdmi_audio_on_off
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0x708F
-#  - platform: template
-#    name: "HDMI Auto Turn On/Off"
-#    id: hdmi_auto_turn_on_off
-#    turn_on_action:
-#      - remote_transmitter.transmit_nec:
-#          address: 0x807F
-#          command: 0xF00F
+  - platform: template
+    name: "HDMI Power On"
+    id: hdmi_power_on
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x3AC5
+  - platform: template
+    name: "HDMI Power Off"
+    id: hdmi_power_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xF807
+  - platform: template
+    name: "HDMI Channel 1"
+    id: hdmi_channel_1
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xD827
+  - platform: template
+    name: "HDMI Channel 2"
+    id: hdmi_channel_2
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x58A7
+  - platform: template
+    name: "HDMI Channel 3"
+    id: hdmi_channel_3
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x40BF
+  - platform: template
+    name: "HDMI Channel 4"
+    id: hdmi_channel_4
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xB04F
+  - platform: template
+    name: "HDMI Audio On/Off"
+    id: hdmi_audio_on_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x708F
+  - platform: template
+    name: "HDMI Auto Turn On/Off"
+    id: hdmi_auto_turn_on_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xF00F
   # System
   - platform: restart
     name: "MintyMCU_IR Restart"
