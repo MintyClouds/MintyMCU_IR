@@ -141,68 +141,68 @@ switch:
           address: 0x807F
           command: 0xF00F
   - platform: template
-      name: "SPDIF Power On"
-      id: spdif_power_on
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x58A7
+    name: "SPDIF Power On"
+    id: spdif_power_on
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x58A7
   - platform: template
-      name: "SPDIF Bluetooth 1"
-      id: spdif_bluetooth_1
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x807F
+    name: "SPDIF Bluetooth 1"
+    id: spdif_bluetooth_1
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x807F
   - platform: template
-      name: "SPDIF Bluetooth Raspberry"
-      id: spdif_bluetooth_raspberry
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x20DF
+    name: "SPDIF Bluetooth Raspberry"
+    id: spdif_bluetooth_raspberry
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x20DF
   - platform: template
-      name: "SPDIF Bluetooth Extractor"
-      id: spdif_bluetooth_extractor
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0xE01F
+    name: "SPDIF Bluetooth Extractor"
+    id: spdif_bluetooth_extractor
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0xE01F
   - platform: template
-      name: "SPDIF Bluetooth HDMI"
-      id: spdif_bluetooth_hdmi
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x50AF
+    name: "SPDIF Bluetooth HDMI"
+    id: spdif_bluetooth_hdmi
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x50AF
   - platform: template
-      name: "SPDIF DAC 1"
-      id: spdif_dac_1
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0xC03F
+    name: "SPDIF DAC 1"
+    id: spdif_dac_1
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0xC03F
   - platform: template
-      name: "SPDIF DAC Raspberry"
-      id: spdif_dac_raspberry
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x609F
+    name: "SPDIF DAC Raspberry"
+    id: spdif_dac_raspberry
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x609F
   - platform: template
-      name: "SPDIF DAC Extractor"
-      id: spdif_dac_extractor
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0x906F
+    name: "SPDIF DAC Extractor"
+    id: spdif_dac_extractor
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0x906F
   - platform: template
-      name: "SPDIF DAC HDMI"
-      id: spdif_dac_hdmi
-      turn_on_action:
-        - remote_transmitter.transmit_nec:
-            address: 0x01FE
-            command: 0xF807
+    name: "SPDIF DAC HDMI"
+    id: spdif_dac_hdmi
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x01FE
+          command: 0xF807
   # System
   - platform: restart
     name: "MintyMCU_IR Restart"
