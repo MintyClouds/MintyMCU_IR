@@ -83,7 +83,178 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0xA05F
+  # # Speakers - Other
+  # - platform: template
+  #   name: "Speakers Input"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x629D
+  # - platform: template
+  #   name: "Speakers Save"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xA25D
+  # - platform: template
+  #   name: "Speakers Sleep"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x22DD
+  - platform: template
+    name: "Speakers Treble Up"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x12ED
+  - platform: template
+    name: "Speakers Treble Down"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x52AD
+  # - platform: template
+  #   name: "Speakers CH Up"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x32CD
+  # - platform: template
+  #   name: "Speakers CH Down"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x728D
+  # - platform: template
+  #   name: "Speakers Tune Up"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x926D
+  # - platform: template
+  #   name: "Speakers Tune Down"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xB04F
+  # - platform: template
+  #   name: "Speakers Auto"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xB24D
+  - platform: template
+    name: "Speakers Bass Up"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x30CF
+  - platform: template
+    name: "Speakers Bass Down"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xF00F
+  - platform: template
+    name: "Speakers Subwoofer Up"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xD02F
+  - platform: template
+    name: "Speakers Subwoofer Down"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xE01F
+  # - platform: template
+  #   name: "Speakers Set"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x50AF
+  # - platform: template
+  #   name: "Speakers Clock"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x609F
+  # - platform: template
+  #   name: "Speakers Number 1"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x4AB5
+  # - platform: template
+  #   name: "Speakers Number 2"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x8A75
+  # - platform: template
+  #   name: "Speakers Number 3"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x0AF5
+  # - platform: template
+  #   name: "Speakers Number 4"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xE817
+  # - platform: template
+  #   name: "Speakers Number 5"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x6897
+  # - platform: template
+  #   name: "Speakers Number 6"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xA857
+  # - platform: template
+  #   name: "Speakers Number 7"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x6A95
+  # - platform: template
+  #   name: "Speakers Number 8"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0xAA55
+  # - platform: template
+  #   name: "Speakers Number 9"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x2AD5
+  # - platform: template
+  #   name: "Speakers Number 0"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x9A65
+  # - platform: template
+  #   name: "Speakers Repeat"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x5AA5
+  # - platform: template
+  #   name: "Speakers Reset"
+  #   turn_on_action:
+  #     - remote_transmitter.transmit_nec:
+  #         address: 0x807F
+  #         command: 0x1AE5
+
   # HDMI Switch
+  #
   - platform: template
     name: "HDMI Power On"
     id: hdmi_power_on
@@ -134,12 +305,32 @@ switch:
           address: 0x807F
           command: 0x708F
   - platform: template
+    name: "HDMI Audio Passthrough"
+    id: hdmi_audio_passthrough
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x08F7
+  - platform: template
+    name: "HDMI ARC On/Off"
+    id: hdmi_arc_on_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x30CF
+  - platform: template
     name: "HDMI Auto Turn On/Off"
     id: hdmi_auto_turn_on_off
     turn_on_action:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0xF00F
+
+  # SPDIF Switch
+  #
+  # * A outputs to Bluetooth transmitter
+  # * B outputs to DAC
+  #
   - platform: template
     name: "SPDIF Power On"
     id: spdif_power_on
