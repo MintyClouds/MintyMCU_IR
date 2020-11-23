@@ -83,7 +83,9 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0xA05F
-  # # Speakers - Other
+
+  # Speakers - Other commands
+  #
   # - platform: template
   #   name: "Speakers Input"
   #   turn_on_action:
@@ -114,6 +116,9 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0x52AD
+  #
+  # Never used this five commands
+  #
   # - platform: template
   #   name: "Speakers CH Up"
   #   turn_on_action:
@@ -168,6 +173,10 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x807F
           command: 0xE01F
+  # 
+  # I think i don't need this enabled all time
+  # But will keep here in case of circumstances
+  #
   # - platform: template
   #   name: "Speakers Set"
   #   turn_on_action:
