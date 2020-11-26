@@ -354,6 +354,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0x807F
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF Bluetooth Raspberry"
     id: spdif_bluetooth_raspberry
@@ -361,6 +363,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0x20DF
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF Bluetooth Extractor"
     id: spdif_bluetooth_extractor
@@ -368,6 +372,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0xE01F
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF Bluetooth HDMI"
     id: spdif_bluetooth_hdmi
@@ -375,6 +381,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0x50AF
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF DAC 1"
     id: spdif_dac_1
@@ -382,6 +390,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0xC03F
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF DAC Raspberry"
     id: spdif_dac_raspberry
@@ -389,6 +399,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0x609F
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF DAC Extractor"
     id: spdif_dac_extractor
@@ -396,6 +408,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0x906F
+          repeat:
+            times: 2
   - platform: template
     name: "SPDIF DAC HDMI"
     id: spdif_dac_hdmi
@@ -403,6 +417,8 @@ switch:
       - remote_transmitter.transmit_nec:
           address: 0x01FE
           command: 0xF807
+          repeat:
+            times: 2
   # System
   - platform: restart
     name: "MintyMCU_IR Restart"
