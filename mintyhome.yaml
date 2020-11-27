@@ -419,6 +419,34 @@ switch:
           command: 0xF807
           repeat:
             times: 2
+  - platform: template
+    name: "SPDIF All 1"
+    id: spdif_all_1
+    turn_on_action:
+      - switch.turn_on: spdif_dac_1
+      - delay: 1s
+      - switch.turn_on: spdif_bluetooth_1
+  - platform: template
+    name: "SPDIF All Raspberry"
+    id: spdif_all_raspberry
+    turn_on_action:
+      - switch.turn_on: spdif_dac_raspberry
+      - delay: 1s
+      - switch.turn_on: spdif_bluetooth_raspberry
+  - platform: template
+    name: "SPDIF All Extractor"
+    id: spdif_all_extractor
+    turn_on_action:
+      - switch.turn_on: spdif_dac_extractor
+      - delay: 1s
+      - switch.turn_on: spdif_bluetooth_extractor
+  - platform: template
+    name: "SPDIF All HDMI"
+    id: spdif_all_hdmi
+    turn_on_action:
+      - switch.turn_on: spdif_dac_hdmi
+      - delay: 1s
+      - switch.turn_on: spdif_bluetooth_hdmi
   # System
   - platform: restart
     name: "MintyMCU_IR Restart"
