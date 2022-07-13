@@ -56,22 +56,6 @@ switch:
           id: sensor_trigger_speakers_power
           state: OFF
   - platform: template
-    name: "Speakers Mute"
-    id: speakers_mute
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x20DF
-      - binary_sensor.template.publish:
-          id: sensor_trigger_speakers_mute
-          state: ON
-      - delay: 1s
-      - switch.turn_off: speakers_mute
-    turn_off_action:
-      - binary_sensor.template.publish:
-          id: sensor_trigger_speakers_mute
-          state: OFF
-  - platform: template
     name: "Speakers Volume Up"
     turn_on_action:
       - remote_transmitter.transmit_nec:
