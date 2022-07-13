@@ -1,5 +1,5 @@
 esphome:
-  name: mintymcu_ir
+  name: mintymcu_ir_tv
   platform: ESP8266
   board: nodemcuv2
 
@@ -84,183 +84,7 @@ switch:
           address: 0x807F
           command: 0xA05F
 
-  # Speakers - Other commands
-  #
-  # - platform: template
-  #   name: "Speakers Input"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x629D
-  # - platform: template
-  #   name: "Speakers Save"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xA25D
-  # - platform: template
-  #   name: "Speakers Sleep"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x22DD
-  - platform: template
-    name: "Speakers Treble Up"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x12ED
-  - platform: template
-    name: "Speakers Treble Down"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x52AD
-  #
-  # Never used this five commands
-  #
-  # - platform: template
-  #   name: "Speakers CH Up"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x32CD
-  # - platform: template
-  #   name: "Speakers CH Down"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x728D
-  # - platform: template
-  #   name: "Speakers Tune Up"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x926D
-  # - platform: template
-  #   name: "Speakers Tune Down"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xB04F
-  # - platform: template
-  #   name: "Speakers Auto"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xB24D
-  - platform: template
-    name: "Speakers Bass Up"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x30CF
-  - platform: template
-    name: "Speakers Bass Down"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xF00F
-  - platform: template
-    name: "Speakers Subwoofer Up"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xD02F
-  - platform: template
-    name: "Speakers Subwoofer Down"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xE01F
-  # 
-  # I think i don't need this enabled all time
-  # But will keep here in case of circumstances
-  #
-  # - platform: template
-  #   name: "Speakers Set"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x50AF
-  # - platform: template
-  #   name: "Speakers Clock"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x609F
-  # - platform: template
-  #   name: "Speakers Number 1"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x4AB5
-  # - platform: template
-  #   name: "Speakers Number 2"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x8A75
-  # - platform: template
-  #   name: "Speakers Number 3"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x0AF5
-  # - platform: template
-  #   name: "Speakers Number 4"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xE817
-  # - platform: template
-  #   name: "Speakers Number 5"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x6897
-  # - platform: template
-  #   name: "Speakers Number 6"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xA857
-  # - platform: template
-  #   name: "Speakers Number 7"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x6A95
-  # - platform: template
-  #   name: "Speakers Number 8"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0xAA55
-  # - platform: template
-  #   name: "Speakers Number 9"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x2AD5
-  # - platform: template
-  #   name: "Speakers Number 0"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x9A65
-  # - platform: template
-  #   name: "Speakers Repeat"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x5AA5
-  # - platform: template
-  #   name: "Speakers Reset"
-  #   turn_on_action:
-  #     - remote_transmitter.transmit_nec:
-  #         address: 0x807F
-  #         command: 0x1AE5
+
 
   # HDMI Switch
   #
@@ -335,128 +159,12 @@ switch:
           address: 0x807F
           command: 0xF00F
 
-  # SPDIF Switch
-  #
-  # * A outputs to Bluetooth transmitter
-  # * B outputs to DAC
-  #
-  - platform: template
-    name: "SPDIF Power On"
-    id: spdif_power_on
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x58A7
-  - platform: template
-    name: "SPDIF Bluetooth 1"
-    id: spdif_bluetooth_1
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x807F
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF Bluetooth Raspberry"
-    id: spdif_bluetooth_raspberry
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x20DF
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF Bluetooth Extractor"
-    id: spdif_bluetooth_extractor
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0xE01F
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF Bluetooth HDMI"
-    id: spdif_bluetooth_hdmi
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x50AF
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF DAC 1"
-    id: spdif_dac_1
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0xC03F
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF DAC Raspberry"
-    id: spdif_dac_raspberry
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x609F
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF DAC Extractor"
-    id: spdif_dac_extractor
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0x906F
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF DAC HDMI"
-    id: spdif_dac_hdmi
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x01FE
-          command: 0xF807
-          repeat:
-            times: 2
-  - platform: template
-    name: "SPDIF All 1"
-    id: spdif_all_1
-    turn_on_action:
-      - switch.turn_on: spdif_dac_1
-      - delay: 1s
-      - switch.turn_on: spdif_bluetooth_1
-  - platform: template
-    name: "SPDIF All Raspberry"
-    id: spdif_all_raspberry
-    turn_on_action:
-      - switch.turn_on: spdif_dac_raspberry
-      - delay: 1s
-      - switch.turn_on: spdif_bluetooth_raspberry
-  - platform: template
-    name: "SPDIF All Extractor"
-    id: spdif_all_extractor
-    turn_on_action:
-      - switch.turn_on: spdif_dac_extractor
-      - delay: 1s
-      - switch.turn_on: spdif_bluetooth_extractor
-  - platform: template
-    name: "SPDIF All HDMI"
-    id: spdif_all_hdmi
-    turn_on_action:
-      - switch.turn_on: spdif_dac_hdmi
-      - delay: 1s
-      - switch.turn_on: spdif_bluetooth_hdmi
-  # System
-  - platform: restart
-    name: "MintyMCU_IR Restart"
-
 sensor:
   - platform: wifi_signal
-    name: "MintyMCU_IR WiFi Signal Sensor"
+    name: "MintyMCU_IR_TV WiFi Signal Sensor"
     update_interval: 60s
   - platform: uptime
-    name: "MintyMCU_IR Uptime Sensor"
+    name: "MintyMCU_IR_TV Uptime Sensor"
     update_interval: 60s
     filters:
       - lambda: return x / (24 * 3600);
@@ -464,23 +172,20 @@ sensor:
 
 binary_sensor:
     - platform: status
-      name: "MintyMCU_IR Status"
+      name: "MintyMCU_IR_TV Status"
     - platform: template
-      name: "MintyMCU_IR Volume Mute Trigger Sensor"
-      id: sensor_trigger_speakers_mute
-    - platform: template
-      name: "MintyMCU_IR Power Trigger Sensor"
+      name: "MintyMCU_IR_TV Power Trigger Sensor"
       id: sensor_trigger_speakers_power
 
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "MintyMCU_IR IP Address"
+      name: "MintyMCU_IR_TV IP Address"
     ssid:
-      name: "MintyMCU_IR Connected SSID"
+      name: "MintyMCU_IR_TV Connected SSID"
     bssid:
-      name: "MintyMCU_IR Connected BSSID"
+      name: "MintyMCU_IR_TV Connected BSSID"
   - platform: version
-    name: "MintyMCU_IR ESPHome Version"
+    name: "MintyMCU_IR_TV ESPHome Version"
 
 # secret: !include secrets.yaml
