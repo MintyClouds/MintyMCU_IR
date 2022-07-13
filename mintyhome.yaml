@@ -30,6 +30,9 @@ remote_receiver:
     pin:
       number: D1
       inverted: True
+      mode:
+        input: true
+        pullup: true
     dump: all
 
 remote_transmitter:
@@ -73,75 +76,117 @@ switch:
   # HDMI Switch
   #
   - platform: template
-    name: "HDMI Power On"
-    id: hdmi_power_on
+    name: "HDMI 2.1 Power"
+    id: hdmi2_1_power
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x3AC5
+          address: 0xFE01
+          command: 0xE01F
   - platform: template
-    name: "HDMI Power Off"
-    id: hdmi_power_off
+    name: "HDMI 2.1 A-B"
+    id: hdmi2_1_ab
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xF807
+          address: 0xFE01
+          command: 0xE21D
   - platform: template
-    name: "HDMI Channel 1"
-    id: hdmi_channel_1
+    name: "HDMI 2.1 ARC On/Off"
+    id: hdmi_2_1_arc_on_off
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xD827
+          address: 0xFE01
+          command: 0xA35C
   - platform: template
-    name: "HDMI Channel 2"
-    id: hdmi_channel_2
+    name: "HDMI 2.1 Audio Passthrough"
+    id: hdmi2_1_audio_passthrough
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x58A7
+          address: 0xFE01
+          command: 0xE41B
   - platform: template
-    name: "HDMI Channel 3"
-    id: hdmi_channel_3
+    name: "HDMI 2.1 Audio 2-channel"
+    id: hdmi2_1_audio_2ch
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x40BF
+          address: 0xFE01
+          command: 0xE51A
   - platform: template
-    name: "HDMI Channel 4"
-    id: hdmi_channel_4
+    name: "HDMI 2.1 Audio 5.1-channel"
+    id: hdmi2_1_audio_5_1ch
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xB04F
+          address: 0xFE01
+          command: 0xE11E
   - platform: template
-    name: "HDMI Audio On/Off"
-    id: hdmi_audio_on_off
+    name: "HDMI 2.1 OUT A Channel 1"
+    id: hdmi2_1_out_a_channel_1
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x708F
+          address: 0xFE01
+          command: 0xFD02
   - platform: template
-    name: "HDMI Audio Passthrough"
-    id: hdmi_audio_passthrough
+    name: "HDMI 2.1 OUT A Channel 2"
+    id: hdmi2_1_out_a_channel_2
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x08F7
+          address: 0xFE01
+          command: 0xF20D
   - platform: template
-    name: "HDMI ARC On/Off"
-    id: hdmi_arc_on_off
+    name: "HDMI 2.1 OUT A Channel 3"
+    id: hdmi2_1_out_a_channel_3
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x30CF
+          address: 0xFE01
+          command: 0xED12
   - platform: template
-    name: "HDMI Auto Turn On/Off"
-    id: hdmi_auto_turn_on_off
+    name: "HDMI 2.1 OUT A Channel 4"
+    id: hdmi2_1_out_a_channel_4
     turn_on_action:
       - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xF00F
+          address: 0xFE01
+          command: 0xEE11
+  - platform: template
+    name: "HDMI 2.1 OUT A On/Off"
+    id: hdmi2_1_out_a_on_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xEF10
+  - platform: template
+    name: "HDMI 2.1 OUT B Channel 1"
+    id: hdmi2_1_out_b_channel_1
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xF10E
+  - platform: template
+    name: "HDMI 2.1 OUT B Channel 2"
+    id: hdmi2_1_out_b_channel_2
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xF30C
+  - platform: template
+    name: "HDMI 2.1 OUT B Channel 3"
+    id: hdmi2_1_out_b_channel_3
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xF609
+  - platform: template
+    name: "HDMI 2.1 OUT B Channel 4"
+    id: hdmi2_1_out_b_channel_4
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xFA05
+  - platform: template
+    name: "HDMI 2.1 OUT B On/Off"
+    id: hdmi2_1_out_b_on_off
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0xFE01
+          command: 0xFE01
 
 sensor:
   - platform: wifi_signal
