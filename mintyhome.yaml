@@ -1,7 +1,7 @@
 esphome:
   name: mintymcu_ir_tv
   platform: ESP8266
-  board: nodemcuv2
+  board: d1_mini
 
 wifi:
   ssid: !secret wifi_ssid
@@ -36,7 +36,7 @@ remote_receiver:
     dump: all
 
 remote_transmitter:
-  pin: D2
+  pin: D3
   # Infrared remotes use a 50% carrier signal
   carrier_duty_percent: 50%
 
