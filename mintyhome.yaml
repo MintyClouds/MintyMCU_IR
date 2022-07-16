@@ -36,7 +36,7 @@ remote_receiver:
     dump: all
 
 remote_transmitter:
-  pin: D3
+  pin: D2
   # Infrared remotes use a 50% carrier signal
   carrier_duty_percent: 50%
 
