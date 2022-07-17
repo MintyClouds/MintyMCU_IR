@@ -41,39 +41,7 @@ remote_transmitter:
   carrier_duty_percent: 50%
 
 switch:
-  # Speakers
-  - platform: template
-    name: "Speakers Power"
-    id: speakers_power
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x827D
-      - binary_sensor.template.publish:
-          id: sensor_trigger_speakers_power
-          state: ON
-      - delay: 1s
-      - switch.turn_off: speakers_power
-    turn_off_action:
-      - binary_sensor.template.publish:
-          id: sensor_trigger_speakers_power
-          state: OFF
-  - platform: template
-    name: "Speakers Volume Up"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x906F
-  - platform: template
-    name: "Speakers Volume Down"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xA05F
-
-
-
-  # HDMI Switch
+  # HDMI 2.1 Switch
   #
   - platform: template
     name: "HDMI 2.1 Power"
