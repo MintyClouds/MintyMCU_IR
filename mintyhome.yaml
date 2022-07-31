@@ -100,6 +100,12 @@ switch:
       - remote_transmitter.transmit_lg:
           data: 0x4BB6906F
           nbits: 32
+  - platform: template
+    name: "Onkyo OUT GAME"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6B04F
+          nbits: 32
   
 
   # System
