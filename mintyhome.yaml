@@ -158,10 +158,10 @@ switch:
 
 sensor:
   - platform: wifi_signal
-    name: "MintyMCU_IR_TV WiFi Signal Sensor"
+    name: "MintyMCU_IR_Onkyo2 WiFi Signal Sensor"
     update_interval: 60s
   - platform: uptime
-    name: "MintyMCU_IR_TV Uptime Sensor"
+    name: "MintyMCU_IR_Onkyo2 Uptime Sensor"
     update_interval: 60s
     filters:
       - lambda: return x / (24 * 3600);
@@ -169,20 +169,20 @@ sensor:
 
 binary_sensor:
     - platform: status
-      name: "MintyMCU_IR_TV Status"
+      name: "MintyMCU_IR_Onkyo2 Status"
     - platform: template
-      name: "MintyMCU_IR_TV Power Trigger Sensor"
+      name: "MintyMCU_IR_Onkyo2 Power Trigger Sensor"
       id: sensor_trigger_speakers_power
 
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "MintyMCU_IR_TV IP Address"
+      name: "MintyMCU_IR_Onkyo2 IP Address"
     ssid:
-      name: "MintyMCU_IR_TV Connected SSID"
+      name: "MintyMCU_IR_Onkyo2 Connected SSID"
     bssid:
-      name: "MintyMCU_IR_TV Connected BSSID"
+      name: "MintyMCU_IR_Onkyo2 Connected BSSID"
   - platform: version
-    name: "MintyMCU_IR_TV ESPHome Version"
+    name: "MintyMCU_IR_Onkyo2 ESPHome Version"
 
 # secret: !include secrets.yaml
