@@ -52,16 +52,66 @@ switch:
           address: 0x807F
           command: 0xA05F
 
+  - platform: template
+    name: "Onkyo Power"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B36D32C
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Up"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB640BF
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Down"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6C03F
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Mute"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6A05F
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Movie"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B350BF4
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Music"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B358B74
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Game"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B354BB4
+          nbits: 32
+  - platform: template
+    name: "Onkyo OUT TV/CD"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6906F
+          nbits: 32
+  
+
   # System
   - platform: restart
-    name: "MintyMCU_IR Restart"
+    name: "MintyMCU_IR_Onkyo Restart"
 
 sensor:
   - platform: wifi_signal
-    name: "MintyMCU_IR WiFi Signal Sensor"
+    name: "MintyMCU_IR_Onkyo WiFi Signal Sensor"
     update_interval: 60s
   - platform: uptime
-    name: "MintyMCU_IR Uptime Sensor"
+    name: "MintyMCU_IR_Onkyo Uptime Sensor"
     update_interval: 60s
     filters:
       - lambda: return x / (24 * 3600);
@@ -70,12 +120,12 @@ sensor:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "MintyMCU_IR IP Address"
+      name: "MintyMCU_IR_Onkyo IP Address"
     ssid:
-      name: "MintyMCU_IR Connected SSID"
+      name: "MintyMCU_IR_Onkyo Connected SSID"
     bssid:
-      name: "MintyMCU_IR Connected BSSID"
+      name: "MintyMCU_IR_Onkyo Connected BSSID"
   - platform: version
-    name: "MintyMCU_IR ESPHome Version"
+    name: "MintyMCU_IR_Onkyo ESPHome Version"
 
 # secret: !include secrets.yaml
