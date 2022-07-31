@@ -30,6 +30,9 @@ remote_receiver:
     pin:
       number: D1
       inverted: True
+      mode:
+        input: true
+        pullup: true
     dump: all
 
 remote_transmitter:
