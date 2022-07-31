@@ -1,0 +1,140 @@
+esphome:
+  name: mintymcu_ir_av_receiver
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: none
+  fast_connect: True
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: !secret ap_ssid
+    password: !secret ap_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  level: VERBOSE
+
+# Enable Home Assistant API
+api:
+  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+remote_receiver:
+    pin:
+      number: D1
+      inverted: True
+      mode:
+        input: true
+        pullup: true
+    dump: all
+
+remote_transmitter:
+  pin: D2
+  # Infrared remotes use a 50% carrier signal
+  carrier_duty_percent: 50%
+
+switch:
+  # Speakers
+  - platform: template
+    name: "Speakers Volume Up"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0x906F
+  - platform: template
+    name: "Speakers Volume Down"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x807F
+          command: 0xA05F
+
+  - platform: template
+    name: "Onkyo Power"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B36D32C
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Up"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB640BF
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Down"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6C03F
+          nbits: 32
+  - platform: template
+    name: "Onkyo Volume Mute"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6A05F
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Movie"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B350BF4
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Music"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B358B74
+          nbits: 32
+  - platform: template
+    name: "Onkyo Mode Game"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4B354BB4
+          nbits: 32
+  - platform: template
+    name: "Onkyo OUT TV/CD"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6906F
+          nbits: 32
+  - platform: template
+    name: "Onkyo OUT GAME"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x4BB6B04F
+          nbits: 32
+  
+
+  # System
+  - platform: restart
+    name: "MintyMCU_IR_Onkyo Restart"
+
+sensor:
+  - platform: wifi_signal
+    name: "MintyMCU_IR_Onkyo WiFi Signal Sensor"
+    update_interval: 60s
+  - platform: uptime
+    name: "MintyMCU_IR_Onkyo Uptime Sensor"
+    update_interval: 60s
+    filters:
+      - lambda: return x / (24 * 3600);
+    unit_of_measurement: "days"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "MintyMCU_IR_Onkyo IP Address"
+    ssid:
+      name: "MintyMCU_IR_Onkyo Connected SSID"
+    bssid:
+      name: "MintyMCU_IR_Onkyo Connected BSSID"
+  - platform: version
+    name: "MintyMCU_IR_Onkyo ESPHome Version"
+
+# secret: !include secrets.yaml
