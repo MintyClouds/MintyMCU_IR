@@ -109,6 +109,117 @@ switch:
       - remote_transmitter.transmit_lg:
           data: 0x4BB6B04F
           nbits: 32
+
+  - platform: template
+    name: "LG Air Power On"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08800448
+          nbits: 28
+  - platform: template
+    name: "LG Air Power Off"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x088C0051
+          nbits: 28
+  - platform: template
+    name: "LG Air Intensive Mode On"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08810089
+          nbits: 28
+  - platform: template
+    name: "LG Air Intensive Mode Off"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x0880834F
+          nbits: 28
+  - platform: template
+    name: "LG Air Swing"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08810001
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 20"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808541
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 21"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808642
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 22"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808743
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 23"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808844
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 24"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808945
+          nbits: 28
+  - platform: template
+    name: "LG Air Temp 25"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808A46
+          nbits: 28
+
+  - platform: template
+    name: "LG Air Fan Speed 1"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808800
+          nbits: 28
+  - platform: template
+    name: "LG Air Fan Speed 2"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808822
+          nbits: 28
+  - platform: template
+    name: "LG Air Fan Speed 3"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x08808844
+          nbits: 28
+  - platform: template
+    name: "LG Air Night Mode 1hr"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x088A03C9
+          nbits: 28
+  - platform: template
+    name: "LG Air Night Mode 2hr"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x088A0789
+          nbits: 28
+
+  - platform: template
+    name: "LG Air Night Mode 4hr"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x088A0F09
+          nbits: 28
+  - platform: template
+    name: "LG Air Night Mode Off"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x088A000A
+          nbits: 28
   
 
   # System
