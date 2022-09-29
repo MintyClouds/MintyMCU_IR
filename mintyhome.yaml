@@ -1,5 +1,5 @@
 esphome:
-  name: mintymcu_ir_av_receiver
+  name: mintymcu_ir_beam
   platform: ESP8266
   board: nodemcuv2
 
@@ -26,14 +26,6 @@ api:
 ota:
   password: !secret ota_password
 
-remote_receiver:
-    pin:
-      number: D1
-      inverted: True
-      mode:
-        input: true
-        pullup: true
-    dump: all
 
 remote_transmitter:
   pin: D2
@@ -224,14 +216,14 @@ switch:
 
   # System
   - platform: restart
-    name: "MintyMCU_IR_Onkyo Restart"
+    name: "MintyMCU_IR_Beam Restart"
 
 sensor:
   - platform: wifi_signal
-    name: "MintyMCU_IR_Onkyo WiFi Signal Sensor"
+    name: "MintyMCU_IR_Beam WiFi Signal Sensor"
     update_interval: 60s
   - platform: uptime
-    name: "MintyMCU_IR_Onkyo Uptime Sensor"
+    name: "MintyMCU_IR_Beam Uptime Sensor"
     update_interval: 60s
     filters:
       - lambda: return x / (24 * 3600);
@@ -240,12 +232,12 @@ sensor:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "MintyMCU_IR_Onkyo IP Address"
+      name: "MintyMCU_IR_Beam IP Address"
     ssid:
-      name: "MintyMCU_IR_Onkyo Connected SSID"
+      name: "MintyMCU_IR_Beam Connected SSID"
     bssid:
-      name: "MintyMCU_IR_Onkyo Connected BSSID"
+      name: "MintyMCU_IR_Beam Connected BSSID"
   - platform: version
-    name: "MintyMCU_IR_Onkyo ESPHome Version"
+    name: "MintyMCU_IR_Beam ESPHome Version"
 
 # secret: !include secrets.yaml
