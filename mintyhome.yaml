@@ -240,4 +240,8 @@ text_sensor:
   - platform: version
     name: "MintyMCU_IR_Beam ESPHome Version"
 
+climate:
+  - platform: climate_ir_lg       # adjust to match your AC unit!
+    name: "Room AC"
+
 # secret: !include secrets.yaml
