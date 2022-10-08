@@ -33,20 +33,6 @@ remote_transmitter:
   carrier_duty_percent: 50%
 
 switch:
-  # Speakers
-  - platform: template
-    name: "Speakers Volume Up"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0x906F
-  - platform: template
-    name: "Speakers Volume Down"
-    turn_on_action:
-      - remote_transmitter.transmit_nec:
-          address: 0x807F
-          command: 0xA05F
-
   - platform: template
     name: "Onkyo Power"
     turn_on_action:
